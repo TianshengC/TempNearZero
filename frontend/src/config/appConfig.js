@@ -8,6 +8,10 @@ export const colors = {
   success: "#10B981", // emerald-500
 };
 
+export const backendUrl =
+  import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+
 export const appConfig = {
   colors: colors,
+  backendUrl: backendUrl,
 };

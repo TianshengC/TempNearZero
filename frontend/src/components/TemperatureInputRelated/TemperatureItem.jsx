@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import Button from "./Button";
+import Button from "../Button";
 
-const TemperatureItem = ({ index, temperature, onRemove }) => (
+const TemperatureItem = ({ index, temperature, onRemove, disabled }) => (
   <div className="w-full max-w-[30rem] md:w-1/2 lg:w-1/3 px-10 md:px-5 py-2">
     <div className="flex justify-between h-full items-center bg-gray-100 rounded-lg transition duration-300 hover:bg-gray-200 ">
       <div className="grow flex items-center space-x-3 pl-2">
@@ -12,7 +12,7 @@ const TemperatureItem = ({ index, temperature, onRemove }) => (
           {temperature.toFixed(1)}°C
         </span>
       </div>
-      <Button onClick={onRemove} variant="remove">
+      <Button onClick={onRemove} variant="remove" disabled={disabled}>
         Remove
       </Button>
     </div>
@@ -23,6 +23,7 @@ TemperatureItem.propTypes = {
   index: PropTypes.number.isRequired,
   temperature: PropTypes.number.isRequired,
   onRemove: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
 };
 
 export default TemperatureItem;

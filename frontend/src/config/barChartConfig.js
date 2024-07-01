@@ -1,4 +1,4 @@
-export const BAR_CHART_CONFIG = {
+export const barChartConfig = {
   colors: {
     HOT: "#F2BC1B",
     COLD: "#56BCD8",
