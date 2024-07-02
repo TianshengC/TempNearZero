@@ -7,12 +7,13 @@ const NotFound = () => {
     <div
       className="flex flex-col items-center justify-center h-full mt-8"
       data-test="not-found-container"
+      role="alert"
     >
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
         404 - Page Not Found :(
       </h1>
       <p className="text-lg sd:text-2xl mb-8">
-        Sorry, the page you are looking for doesn't exist.
+        Sorry, the page you are looking for doesn&apos;t exist.
       </p>
       <button
         onClick={() => navigate("/")}

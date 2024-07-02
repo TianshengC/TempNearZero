@@ -36,17 +36,23 @@ const TemperatureInputField = ({ temperatures, setTemperatures, disabled }) => {
           placeholder="Enter temperature..."
           disabled={disabled}
           data-test="temperature-input"
+          data-testid="temperature-input"
         />
         <Button
           onClick={handleAddTemperature}
           disabled={disabled}
           dataTest="add-temperature-button"
+          dataTestid="add-temperature-button"
         >
           Add
         </Button>
       </div>
       {error && (
-        <p className="text-error mb-4" data-test="input-error-message">
+        <p
+          className="text-error mb-4"
+          data-test="input-error-message"
+          data-testid="input-error-message"
+        >
           {error}
         </p>
       )}

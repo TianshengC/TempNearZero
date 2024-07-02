@@ -8,6 +8,8 @@
 # Build outputs
 /frontend/dist/
 /backend/dist/
+/frontend/coverage/
+/backend/coverage/
 
 # OS generated files
 .DS_Store

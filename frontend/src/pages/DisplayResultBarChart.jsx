@@ -59,21 +59,24 @@ const DisplayResultBarChart = () => {
     <div
       className="flex flex-col items-center bg-white mb-5"
       data-test="result-chart-container"
+      data-testid="result-chart-container"
     >
       <h2
         className="text-lg sm:text-2xl lg:text-3xl text-textPrimary font-bold mb-4"
         data-test="result-title"
+        data-testid="result-title"
       >
         Temperature Analysis Result
       </h2>
       <div
         className={`${barChartConfig.dimensions.width} ${barChartConfig.dimensions.height}`}
         data-test="bar-chart"
+        data-testid="bar-chart"
       >
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={chartData}
-            margin={{ top: 30, right: 5, left: 2, bottom: 5 }}
+            margin={{ top: 30, right: 30, left: 2, bottom: 5 }}
             barCategoryGap="0%"
           >
             <XAxis
@@ -130,6 +133,7 @@ const DisplayResultBarChart = () => {
         <p
           className="text-base sm:text-lg md:text-2xl px-2"
           data-test="closest-to-zero-result"
+          data-testid="closest-to-zero-result"
         >
           Result: <span className="font-bold">{closestToZero}</span> is the
           closest to 0.
@@ -139,6 +143,7 @@ const DisplayResultBarChart = () => {
         onClick={() => navigate("/", { replace: true })}
         className="mt-6 mb-5"
         dataTest="back-to-home-button"
+        dataTestid="back-to-home-button"
       >
         Back to Home
       </Button>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import TemperatureInputIntro from "../components/TemperatureInputRelated/TemperatureInpurIntro";
+import TemperatureInputIntro from "../components/TemperatureInputRelated/TemperatureInputIntro";
 import TemperatureInputField from "../components/TemperatureInputRelated/TemperatureInputField";
 import TemperatureList from "../components/TemperatureInputRelated/TemperatureList";
 import Button from "../components/Button";
@@ -54,6 +54,7 @@ const TemperatureInputContainer = () => {
     <div
       className="w-full flex flex-col items-center gap-2 p-4 bg-white rounded shadow-md grow"
       data-test="temperature-input-container"
+      data-testid="temperature-input-container"
     >
       <TemperatureInputIntro />
       <TemperatureInputField
@@ -72,6 +73,7 @@ const TemperatureInputContainer = () => {
           onClick={handleSubmit}
           disabled={isLoading || temperatures.length === 0}
           dataTest="submit-temperatures-button"
+          dataTestid="submit-temperatures-button"
         >
           {isLoading ? "Processing..." : "Submit"}
         </Button>
@@ -80,12 +82,17 @@ const TemperatureInputContainer = () => {
           variant="remove"
           disabled={isLoading || temperatures.length === 0}
           dataTest="remove-all-temperatures-button"
+          dataTestid="remove-all-temperatures-button"
         >
           Remove All
         </Button>
       </div>
       {error && (
-        <p className="text-error mt-1" data-test="submission-error-message">
+        <p
+          className="text-error mt-1"
+          data-test="submission-error-message"
+          data-testid="submission-error-message"
+        >
           {error}
         </p>
       )}
