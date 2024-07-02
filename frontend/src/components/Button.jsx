@@ -6,6 +6,7 @@ const Button = ({
   className = "",
   variant = "normal",
   disabled = false,
+  dataTest,
 }) => {
   const baseClasses =
     "px-4 py-2 rounded-md focus:outline-none focus:ring-2 transition duration-200";
@@ -25,7 +26,12 @@ const Button = ({
   `.trim();
 
   return (
-    <button onClick={onClick} className={buttonClasses} disabled={disabled}>
+    <button
+      onClick={onClick}
+      className={buttonClasses}
+      disabled={disabled}
+      data-test={dataTest}
+    >
       {children}
     </button>
   );
@@ -37,6 +43,7 @@ Button.propTypes = {
   className: PropTypes.string,
   variant: PropTypes.oneOf(["normal", "remove"]),
   disabled: PropTypes.bool,
+  dataTest: PropTypes.string,
 };
 
 export default Button;

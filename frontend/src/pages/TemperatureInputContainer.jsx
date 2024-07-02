@@ -51,7 +51,10 @@ const TemperatureInputContainer = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center gap-2 p-4 bg-white rounded shadow-md grow">
+    <div
+      className="w-full flex flex-col items-center gap-2 p-4 bg-white rounded shadow-md grow"
+      data-test="temperature-input-container"
+    >
       <TemperatureInputIntro />
       <TemperatureInputField
         temperatures={temperatures}
@@ -68,6 +71,7 @@ const TemperatureInputContainer = () => {
         <Button
           onClick={handleSubmit}
           disabled={isLoading || temperatures.length === 0}
+          dataTest="submit-temperatures-button"
         >
           {isLoading ? "Processing..." : "Submit"}
         </Button>
@@ -75,11 +79,16 @@ const TemperatureInputContainer = () => {
           onClick={handleRemoveAll}
           variant="remove"
           disabled={isLoading || temperatures.length === 0}
+          dataTest="remove-all-temperatures-button"
         >
           Remove All
         </Button>
       </div>
-      {error && <p className="text-error mt-1">{error}</p>}
+      {error && (
+        <p className="text-error mt-1" data-test="submission-error-message">
+          {error}
+        </p>
+      )}
     </div>
   );
 };

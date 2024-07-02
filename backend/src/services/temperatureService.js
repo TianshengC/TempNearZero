@@ -1,4 +1,8 @@
 exports.findClosestToZero = (temps) => {
+  if (temps.length === 0) {
+    return { value: null, index: -1 };
+  }
+
   let closest = temps[0];
   let closestIndex = 0;
 
@@ -17,6 +21,10 @@ exports.findClosestToZero = (temps) => {
 };
 
 exports.createChartData = (temperatures, closestIndex) => {
+  if (temperatures.length === 0) {
+    return [];
+  }
+
   return temperatures.map((temp, index) => ({
     temperature: temp,
     label: {

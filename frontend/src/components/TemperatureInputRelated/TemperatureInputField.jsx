@@ -35,12 +35,21 @@ const TemperatureInputField = ({ temperatures, setTemperatures, disabled }) => {
           className="w-64 px-3 py-2 border-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-textPrimary"
           placeholder="Enter temperature..."
           disabled={disabled}
+          data-test="temperature-input"
         />
-        <Button onClick={handleAddTemperature} disabled={disabled}>
+        <Button
+          onClick={handleAddTemperature}
+          disabled={disabled}
+          dataTest="add-temperature-button"
+        >
           Add
         </Button>
       </div>
-      {error && <p className="text-error mb-4">{error}</p>}
+      {error && (
+        <p className="text-error mb-4" data-test="input-error-message">
+          {error}
+        </p>
+      )}
     </div>
   );
 };

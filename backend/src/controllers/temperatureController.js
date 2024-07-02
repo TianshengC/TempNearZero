@@ -12,13 +12,6 @@ exports.calculateClosestToZero = (req, res, next) => {
       );
     }
 
-    if (!Array.isArray(temperatures)) {
-      throw new CustomError(
-        400,
-        "Invalid input: temperatures must be an array."
-      );
-    }
-
     const result = temperatureService.findClosestToZero(temperatures);
     const chartData = temperatureService.createChartData(
       temperatures,

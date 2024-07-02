@@ -8,14 +8,25 @@ const TemperatureList = ({ temperatures, setTemperatures, disabled }) => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center mt-3">
-      <h3 className="text-lg font-bold mb-2 text-textPrimary">
+    <div
+      className="w-full flex flex-col items-center justify-center mt-3"
+      data-test="temperature-list-container"
+    >
+      <h3
+        className="text-lg font-bold mb-2 text-textPrimary"
+        data-test="temperature-list-title"
+      >
         Temperature List
       </h3>
       {temperatures.length === 0 ? (
-        <p className="text-gray-500 italic mb-2">No temperatures added yet.</p>
+        <p className="text-gray-500 italic mb-2" data-test="empty-list-message">
+          No temperatures added yet.
+        </p>
       ) : (
-        <div className="flex flex-wrap -mx-2 max-w-6xl w-full sm:w-4/5 md:w-4/5 lg:w-4/5 px-5">
+        <div
+          className="flex flex-wrap -mx-2 max-w-6xl w-full sm:w-4/5 md:w-4/5 lg:w-4/5 px-5"
+          data-test="temperature-items-container"
+        >
           {temperatures.map((temp, index) => (
             <TemperatureItem
               key={index}
@@ -23,6 +34,7 @@ const TemperatureList = ({ temperatures, setTemperatures, disabled }) => {
               temperature={temp}
               onRemove={() => handleRemoveTemperature(index)}
               disabled={disabled}
+              dataTest={`temperature-item-${index}`}
             />
           ))}
         </div>
