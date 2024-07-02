@@ -8,16 +8,14 @@ provides a user-friendly interface for data entry and result display.
 ## Table of Contents
 
 - [Features](#features)
+- [Screenshots](#Screenshots)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
 - [Running Tests](#running-tests)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
 - [License](#license)
-- [Contact](#contact)
 
 ## Features
 
@@ -25,6 +23,11 @@ provides a user-friendly interface for data entry and result display.
 - Validate temperature inputs
 - Calculate and display the temperature closest to zero
 - Visualize temperature data with a bar chart
+
+## Screenshots
+
+![Input Page](images/input.png)
+![Results Page](images/result.png)
 
 ## Technologies Used
 
@@ -116,11 +119,6 @@ In the `frontend` directory:
 
 - Run Cypress tests headlessly: `npm run cy`
 - Open Cypress test runner: `npm run cy:open`
-
-## Screenshots
-
-![Input Page](images/input.png)
-![Results Page](images/result.png)
 
 ## License
 
