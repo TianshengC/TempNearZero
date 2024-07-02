@@ -7,7 +7,6 @@ const errorHandler = require("../../../src/middlewares/errorHandler");
 const app = express();
 app.use(bodyParser.json());
 app.post("/calculate-closest", temperatureController.calculateClosestToZero);
-// app.use(errorHandler);
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode;
   res.status(statusCode).json({
