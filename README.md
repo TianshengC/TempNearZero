@@ -23,7 +23,7 @@ provides a user-friendly interface for data entry and result display.
 - Validate temperature inputs
 - Calculate and display the temperature closest to zero
 - Visualize temperature data with a bar chart
-- Responsive Design
+- Responsive design
 
 ## Screenshots
 
