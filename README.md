@@ -37,6 +37,7 @@ provides a user-friendly interface for data entry and result display.
 - React
 - Vite
 - Tailwind CSS
+- Rechart.js
 
 ### Backend
 
